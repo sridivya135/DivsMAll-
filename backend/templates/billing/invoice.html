@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoice {{ bill.invoice_number }} | Div's Mall</title>
+  <link rel="icon" type="image/svg+xml" href="/static/logo.svg" />
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f3f4f6; color: #111827; font: 14px/1.5 "Segoe UI", Arial, sans-serif; }
+    .page { width: 800px; max-width: 100%; margin: 32px auto; padding: 40px; background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+    header { display: flex; justify-content: space-between; gap: 24px; border-bottom: 3px solid #111111; padding-bottom: 20px; }
+    h1 { margin: 0 0 6px; font-size: 28px; color: #111111; letter-spacing: .5px; }
+    h2 { margin: 0 0 12px; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; }
+    .muted { color: #6b7280; }
+    .right { text-align: right; }
+    .section { display: flex; justify-content: space-between; gap: 32px; margin: 28px 0; }
+    .section > div { flex: 1; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { padding: 10px 8px; border-bottom: 1px solid #e5e7eb; text-align: left; }
+    th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: #374151; }
+    td.num, th.num { text-align: right; }
+    tfoot td { border: none; padding: 6px 8px; }
+    tfoot .total { margin-top: 10px; padding-top: 12px; border-top: 2px solid #111827; font-size: 18px; font-weight: 700; }
+    .thanks { margin-top: 40px; padding: 14px; text-align: center; background: #f3f4f6; color: #111827; font-weight: 600; border-radius: 6px; }
+    .actions { width: 800px; max-width: 100%; margin: 16px auto; text-align: right; }
+    button { padding: 10px 18px; border: 0; border-radius: 6px; background: #111111; color: white; font-size: 14px; cursor: pointer; }
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; padding: 0; box-shadow: none; width: 100%; }
+      .actions { display: none; }
+      @page { size: A4; margin: 16mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="actions"><button type="button" onclick="window.print()">Print / Save as PDF</button></div>
+  <div class="page">
+    <header>
+      <div>
+        <h1>{{ bill.mall.name }}</h1>
+        <div class="muted">{{ bill.mall.address }}{% if bill.mall.city %}, {{ bill.mall.city }}{% endif %}</div>
+        {% if bill.mall.phone %}<div class="muted">Phone: {{ bill.mall.phone }}</div>{% endif %}
+        {% if bill.mall.email %}<div class="muted">Email: {{ bill.mall.email }}</div>{% endif %}
+        {% if bill.mall.gstin %}<div class="muted">GSTIN: {{ bill.mall.gstin }}</div>{% endif %}
+      </div>
+      <div class="right">
+        <h2>Invoice</h2>
+        <div><strong>{{ bill.invoice_number }}</strong></div>
+        <div class="muted">{{ bill.issued_at }}</div>
+        <div class="muted">Order #{{ bill.order.id }}</div>
+      </div>
+    </header>
+
+    <div class="section">
+      <div>
+        <h2>Bill To</h2>
+        <div><strong>{{ bill.customer.name }}</strong></div>
+        <div class="muted">{{ bill.customer.address }}</div>
+        <div class="muted">{{ bill.customer.city }}{% if bill.customer.state %}, {{ bill.customer.state }}{% endif %} {% if bill.customer.pincode %}- {{ bill.customer.pincode }}{% endif %}</div>
+        <div class="muted">{{ bill.customer.email }}</div>
+        <div class="muted">{{ bill.customer.phone }}</div>
+      </div>
+      <div class="right">
+        <h2>Status</h2>
+        <div>Order: {{ bill.order.status }}</div>
+        <div>Payment: {{ bill.order.payment_status }}</div>
+      </div>
+    </div>
+
+    <h2>Items</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Product</th>
+          <th class="num">Unit Price</th>
+          <th class="num">Qty</th>
+          <th class="num">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in bill.items %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ item.product_name }}</td>
+          <td class="num">{{ item.unit_price }}</td>
+          <td class="num">{{ item.quantity }}</td>
+          <td class="num">{{ item.subtotal }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr><td colspan="3"></td><td class="num"><strong>Subtotal</strong></td><td class="num">{{ bill.subtotal }}</td></tr>
+        <tr><td colspan="3"></td><td class="num">Discount</td><td class="num">-{{ bill.discount }}</td></tr>
+        <tr><td colspan="3"></td><td class="num">Tax</td><td class="num">{{ bill.tax }}</td></tr>
+        <tr class="total"><td colspan="3"></td><td class="num">Grand Total</td><td class="num">{{ bill.grand_total }}</td></tr>
+      </tfoot>
+    </table>
+
+    <div class="thanks">{{ bill.thank_you }}</div>
+  </div>
+</body>
+</html>

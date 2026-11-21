@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Div's Mall</title>
+  <desc id="desc">Logo with letter D for Div's Mall</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#4b5563"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="108" height="108" rx="24" fill="url(#bg)"/>
+  <rect x="6" y="6" width="108" height="108" rx="24" fill="none" stroke="#e5e7eb" stroke-width="2"/>
+  <path d="M38 28 H58 C78 28 90 42 90 60 C90 78 78 92 58 92 H38 Z" fill="#ffffff"/>
+  <path d="M48 38 H57 C71 38 79 47 79 60 C79 73 71 82 57 82 H48 Z" fill="#111111"/>
+</svg>
