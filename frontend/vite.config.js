@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  // For GitHub Pages project sites, set VITE_BASE="/<repo-name>/"
+  base: process.env.VITE_BASE || '/',
   server: {
     port: 5173,
     // Optional alternative to VITE_API_BASE_URL: call '/api/...' from the browser
