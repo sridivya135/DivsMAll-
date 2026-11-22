@@ -218,7 +218,7 @@ export default function Store() {
           <a href="/" className="store-brand" aria-label="Div's Mall home">
             {logoOk ? (
               <img
-                src="/logo.svg"
+                src={`${import.meta.env.BASE_URL}logo.svg`}
                 alt="Div's Mall logo"
                 className="store-logo"
                 onError={() => setLogoOk(false)}

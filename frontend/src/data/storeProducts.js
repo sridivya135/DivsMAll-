@@ -1,4 +1,4 @@
-const svgImage = (label, accent = '#4b5563') => {
+﻿const svgImage = (label, accent = '#4b5563') => {
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520">
       <rect width="100%" height="100%" fill="#f3f4f6"/>
@@ -27,7 +27,7 @@ export const PRODUCTS = [
     category: 'women',
     name: 'Elegant Everyday Dress',
     price: 1899,
-    image: '/products/women/women-dress-1.jpeg',
+    image: import.meta.env.BASE_URL + 'products/women/women-dress-1.jpeg',
     description: 'A graceful everyday dress with a flattering silhouette, perfect for outings and casual occasions.',
   },
   {
@@ -35,15 +35,15 @@ export const PRODUCTS = [
     category: 'women',
     name: 'Chic Linen Pants Outfit',
     price: 2199,
-    image: '/products/women/linen-pants-outfit.jpeg',
-    description: 'Effortlessly chic linen pants outfit with a breathable, lightweight feel—ideal for summer styling.',
+    image: import.meta.env.BASE_URL + 'products/women/linen-pants-outfit.jpeg',
+    description: 'Effortlessly chic linen pants outfit with a breathable, lightweight feelâ€”ideal for summer styling.',
   },
   {
     id: 'w3',
     category: 'women',
     name: 'Trendy Casual Outfit',
     price: 1599,
-    image: '/products/women/shein-outfit.jpeg',
+    image: import.meta.env.BASE_URL + 'products/women/shein-outfit.jpeg',
     description: 'A modern, stylish casual outfit that pairs comfort with a trendy look for day-to-day wear.',
   },
   {
@@ -51,7 +51,7 @@ export const PRODUCTS = [
     category: 'women',
     name: 'Classic Cotton Kurti',
     price: 1299,
-    image: '/products/women/cotton-kurti.jpeg',
+    image: import.meta.env.BASE_URL + 'products/women/cotton-kurti.jpeg',
     description: 'Soft and breathable cotton kurti designed for all-day comfort, perfect for daily and festive wear.',
   },
   {
@@ -59,7 +59,7 @@ export const PRODUCTS = [
     category: 'women',
     name: 'Elegant Puff Sleeve Striped Blouse',
     price: 1499,
-    image: '/products/women/elegant-puff-sleeve-blouse.jpeg',
+    image: import.meta.env.BASE_URL + 'products/women/elegant-puff-sleeve-blouse.jpeg',
     description: 'Elegant short-sleeve striped blouse with puff sleeves and a tailored fit for a polished, feminine look.',
   },
 
@@ -69,15 +69,15 @@ export const PRODUCTS = [
     category: 'men',
     name: 'Spider Print Casual Hoodie',
     price: 1799,
-    image: '/products/men/spider-print-hoodie.jpeg',
-    description: 'Casual long-sleeve hoodie with a bold spider print—comfortable, warm, and great for everyday wear.',
+    image: import.meta.env.BASE_URL + 'products/men/spider-print-hoodie.jpeg',
+    description: 'Casual long-sleeve hoodie with a bold spider printâ€”comfortable, warm, and great for everyday wear.',
   },
   {
     id: 'm2',
     category: 'men',
     name: 'Chocolate Relaxed Fit Cargo Trousers',
     price: 1999,
-    image: '/products/men/chocolate-cargo-trouser.jpeg',
+    image: import.meta.env.BASE_URL + 'products/men/chocolate-cargo-trouser.jpeg',
     description: 'Relaxed-fit cargo trousers in a rich chocolate tone, featuring practical pockets and all-day comfort.',
   },
   {
@@ -85,15 +85,15 @@ export const PRODUCTS = [
     category: 'men',
     name: 'Classic Men\'s Casual Outfit',
     price: 1699,
-    image: '/products/men/men-outfit-1.jpeg',
-    description: 'A stylish casual outfit with a clean, modern look—easy to pair for daily wear and outings.',
+    image: import.meta.env.BASE_URL + 'products/men/men-outfit-1.jpeg',
+    description: 'A stylish casual outfit with a clean, modern lookâ€”easy to pair for daily wear and outings.',
   },
   {
     id: 'm4',
     category: 'men',
     name: 'Smart Men\'s Fashion Outfit',
     price: 1899,
-    image: '/products/men/men-outfit-2.jpeg',
+    image: import.meta.env.BASE_URL + 'products/men/men-outfit-2.jpeg',
     description: 'A smart, contemporary men\'s outfit designed for comfort and a sharp everyday appearance.',
   },
   {
@@ -101,8 +101,8 @@ export const PRODUCTS = [
     category: 'men',
     name: 'Ripped Denim Jacket',
     price: 2499,
-    image: '/products/men/ripped-denim-jacket.jpeg',
-    description: 'Men\'s flap-pocket ripped denim jacket with a rugged finish—perfect for layering and street-style looks.',
+    image: import.meta.env.BASE_URL + 'products/men/ripped-denim-jacket.jpeg',
+    description: 'Men\'s flap-pocket ripped denim jacket with a rugged finishâ€”perfect for layering and street-style looks.',
   },
 
   // Boy
@@ -111,7 +111,7 @@ export const PRODUCTS = [
     category: 'boy',
     name: 'Boden Kids Classic Outfit',
     price: 1299,
-    image: '/products/boy/boden-kids-outfit.jpeg',
+    image: import.meta.env.BASE_URL + 'products/boy/boden-kids-outfit.jpeg',
     description: 'A classic, well-finished kids outfit with a smart and comfortable look for everyday wear and outings.',
   },
   {
@@ -119,15 +119,15 @@ export const PRODUCTS = [
     category: 'boy',
     name: 'Brown Raglan T-Shirt',
     price: 899,
-    image: '/products/boy/brown-raglan-tshirt.jpeg',
-    description: 'Minimalist regular-fit brown raglan T-shirt with a sporty contrast style—easy to pair and comfortable.',
+    image: import.meta.env.BASE_URL + 'products/boy/brown-raglan-tshirt.jpeg',
+    description: 'Minimalist regular-fit brown raglan T-shirt with a sporty contrast styleâ€”easy to pair and comfortable.',
   },
   {
     id: 'b3',
     category: 'boy',
     name: 'Trendy Boy\'s Casual Outfit',
     price: 1099,
-    image: '/products/boy/shein-boy-outfit.jpeg',
+    image: import.meta.env.BASE_URL + 'products/boy/shein-boy-outfit.jpeg',
     description: 'A trendy casual outfit for boys with a modern look, perfect for daily wear and casual occasions.',
   },
   {
@@ -135,15 +135,15 @@ export const PRODUCTS = [
     category: 'boy',
     name: 'Surf Style Sport Outfit',
     price: 1199,
-    image: '/products/boy/surf-sport-outfit.jpeg',
-    description: 'Sporty surf-inspired outfit with a cool, active vibe—great for playtime and outdoor fun.',
+    image: import.meta.env.BASE_URL + 'products/boy/surf-sport-outfit.jpeg',
+    description: 'Sporty surf-inspired outfit with a cool, active vibeâ€”great for playtime and outdoor fun.',
   },
   {
     id: 'b5',
     category: 'boy',
     name: 'Cute Everyday Boy Outfit',
     price: 999,
-    image: '/products/boy/cute-boy-outfit.jpeg',
+    image: import.meta.env.BASE_URL + 'products/boy/cute-boy-outfit.jpeg',
     description: 'An adorable and comfy everyday outfit for boys, designed for a cute look with all-day ease.',
   },
 
@@ -153,23 +153,23 @@ export const PRODUCTS = [
     category: 'girl',
     name: 'Letter Print Sweatshirt & Pleated Skirt Set',
     price: 1399,
-    image: '/products/girl/sweatshirt-skirt-set.jpeg',
-    description: 'Cute crew-neck letter print sweatshirt paired with a pleated skirt—comfortable, stylish, and perfect for everyday wear.',
+    image: import.meta.env.BASE_URL + 'products/girl/sweatshirt-skirt-set.jpeg',
+    description: 'Cute crew-neck letter print sweatshirt paired with a pleated skirtâ€”comfortable, stylish, and perfect for everyday wear.',
   },
   {
     id: 'g2',
     category: 'girl',
     name: 'Cozy Pink & White Sweater',
     price: 1199,
-    image: '/products/girl/cozy-pink-white-sweater.jpeg',
-    description: 'A cozy pink and white sweater with a soft, warm feel—ideal for layering on cooler days.',
+    image: import.meta.env.BASE_URL + 'products/girl/cozy-pink-white-sweater.jpeg',
+    description: 'A cozy pink and white sweater with a soft, warm feelâ€”ideal for layering on cooler days.',
   },
   {
     id: 'g3',
     category: 'girl',
     name: 'Trendy Girl\'s Outfit',
     price: 1299,
-    image: '/products/girl/girl-outfit-1.jpeg',
+    image: import.meta.env.BASE_URL + 'products/girl/girl-outfit-1.jpeg',
     description: 'A trendy and comfortable outfit for girls with a charming look, great for outings and daily wear.',
   },
   {
@@ -177,7 +177,7 @@ export const PRODUCTS = [
     category: 'girl',
     name: 'Stylish Girl\'s Outfit',
     price: 1249,
-    image: '/products/girl/girl-outfit-2.jpeg',
+    image: import.meta.env.BASE_URL + 'products/girl/girl-outfit-2.jpeg',
     description: 'A stylish, easy-to-wear outfit designed for comfort and a cute, modern appearance.',
   },
   {
@@ -185,7 +185,7 @@ export const PRODUCTS = [
     category: 'girl',
     name: 'Stylish Bottoms Collection',
     price: 999,
-    image: '/products/girl/stylish-bottoms.jpeg',
+    image: import.meta.env.BASE_URL + 'products/girl/stylish-bottoms.jpeg',
     description: 'Versatile and comfortable bottoms that pair easily with tops for a complete, fashionable look.',
   },
 ];
